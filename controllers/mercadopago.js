@@ -73,9 +73,11 @@ class MercadopagoController{
                 description: "Dispositivo móvil de Tienda e-commerce",
                 picture_url: this.urlFrontend + req.body.img,
                 quantity: parseInt(req.body.unit),
-                unit_price: parseFloat(req.body.price)
+                unit_price: parseFloat(req.body.price),
+                currency_id: 'ARS'
             });
 
+            console.log(req.body.price, req.body.unit);
 
             const resMP = await mercadopago.preferences.create(this.preferences);
             //console.log(resMP);
