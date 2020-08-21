@@ -59,10 +59,7 @@ class MercadopagoController{
     }
 
     async getNotification(req,res){
-        if(req.action){
-            const resMP = await mercadopago.payment.search({ qs: req.body.id });
-            console.log(resMP);
-        }
+        console.log(req.body);
     }
 
     async createPayment(req,res){
