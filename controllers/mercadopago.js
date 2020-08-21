@@ -77,7 +77,6 @@ class MercadopagoController{
             });
 
             const resMP = await mercadopago.preferences.create(this.preferences);
-            console.log(resMP);
             //console.log(resMP);
             res.status(200).send({init_point: resMP.body.init_point});
 
