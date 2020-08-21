@@ -40,7 +40,7 @@ app.get('/payment/pending', function (req, res) {
 
 
 //Mercadopago
-app.get('/mp/notification', (req,res)=>{
+app.post('/mp/notification', (req,res)=>{
     mpControllers.getNotification(req,res);
 });
 app.post('/mp/payment', (req,res)=>{
