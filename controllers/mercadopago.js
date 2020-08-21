@@ -49,7 +49,7 @@ class MercadopagoController{
                     street_number: 123
                 }
             },
-            external_reference: 'luisaraujo@metodity.com',
+            external_reference: 'luiseduardoab97@gmail.com',
             items: []
         }
     }
