@@ -38,7 +38,7 @@ class MercadopagoController{
                 ],
                 installments: 6
             },
-            auto_return: 'approved',
+            "auto_return": "approved",
             payer:{
                 name: 'Lalo',
                 surname: 'Landa',
@@ -76,9 +76,10 @@ class MercadopagoController{
                 unit_price: parseFloat(req.body.price)
             });
 
+
             const resMP = await mercadopago.preferences.create(this.preferences);
             //console.log(resMP);
-            res.status(200).send({init_point: resMP.body.init_point});
+            res.status(200).send({init_point: resMP.body.init_point, resMP: resMP});
 
         } catch (error) {
             console.log(error);
@@ -88,3 +89,4 @@ class MercadopagoController{
 }
 
 module.exports = new MercadopagoController();
+
