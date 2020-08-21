@@ -38,7 +38,7 @@ class MercadopagoController{
                 ],
                 installments: 6
             },
-            auto_return: 'all',
+            auto_return: 'approved',
             payer:{
                 name: 'Lalo',
                 surname: 'Landa',
@@ -47,6 +47,10 @@ class MercadopagoController{
                     zip_code: '1111',
                     street_name: 'False',
                     street_number: 123
+                },
+                phone:{
+                    area_code: 11,
+                    number: 22223333
                 }
             },
             external_reference: 'luiseduardoab97@gmail.com',
@@ -55,7 +59,10 @@ class MercadopagoController{
     }
 
     async getNotification(req,res){
-        console.log(req.body);
+        if(req.action){
+            const resMP = await mercadopago.payment.search({ qs: req.body.id });
+            console.log(resMP);
+        }
     }
 
     async createPayment(req,res){
@@ -69,7 +76,7 @@ class MercadopagoController{
                 description: "Dispositivo móvil de Tienda e-commerce",
                 picture_url: this.urlFrontend + req.body.img,
                 quantity: 1,
-                unit_price: parseInt(req.body.price)
+                unit_price: parseFloat(req.body.price)
             });
 
             const resMP = await mercadopago.preferences.create(this.preferences);
