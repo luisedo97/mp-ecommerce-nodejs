@@ -49,8 +49,8 @@ class MercadopagoController{
                     street_number: 123
                 },
                 phone:{
-                    area_code: 11,
-                    number: 22223333
+                    area_code: '11',
+                    number: '22223333'
                 }
             },
             external_reference: 'luiseduardoab97@gmail.com',
@@ -75,7 +75,7 @@ class MercadopagoController{
                 title: req.body.title,
                 description: "Dispositivo móvil de Tienda e-commerce",
                 picture_url: this.urlFrontend + req.body.img,
-                quantity: 1,
+                quantity: parseInt(req.body.unit),
                 unit_price: parseFloat(req.body.price)
             });
 
