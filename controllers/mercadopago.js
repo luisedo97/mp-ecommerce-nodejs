@@ -38,6 +38,7 @@ class MercadopagoController{
                 ],
                 installments: 6
             },
+            auto_return: 'all',
             payer:{
                 name: 'Lalo',
                 surname: 'Landa',
