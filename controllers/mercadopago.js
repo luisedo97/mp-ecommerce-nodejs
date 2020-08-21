@@ -59,7 +59,7 @@ class MercadopagoController{
     }
 
     async getNotification(req,res){
-        console.log(req.body);
+        res.status(200).send({status: 200});
     }
 
     async createPayment(req,res){
@@ -91,4 +91,3 @@ class MercadopagoController{
 }
 
 module.exports = new MercadopagoController();
-
