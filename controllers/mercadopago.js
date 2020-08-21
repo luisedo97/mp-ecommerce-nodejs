@@ -50,7 +50,7 @@ class MercadopagoController{
                 },
                 phone:{
                     area_code: '11',
-                    number: '22223333'
+                    number: 22223333
                 }
             },
             external_reference: 'luiseduardoab97@gmail.com',
