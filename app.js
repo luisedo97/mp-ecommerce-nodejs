@@ -25,6 +25,20 @@ app.get('/detail', function (req, res) {
     res.render('detail', req.query);
 });
 
+//Payment
+app.get('/payment/failure', function (req, res) {
+    res.render('failure', req.query);
+});
+
+app.get('/payment/success', function (req, res) {
+    res.render('success', req.query);
+});
+
+app.get('/payment/pending', function (req, res) {
+    res.render('pending', req.query);
+});
+
+
 //Mercadopago
 app.get('/mp/notification', (req,res)=>{
     mpControllers.getNotification(req,res);

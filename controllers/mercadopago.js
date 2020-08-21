@@ -54,7 +54,7 @@ class MercadopagoController{
     }
 
     async getNotification(req,res){
-        console.log(req,res)
+        console.log(req);
     }
 
     async createPayment(req,res){
